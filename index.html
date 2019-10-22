@@ -21,6 +21,21 @@
   <!-- Main code -->
   <script>
     // write your code here
+    
+    arrayOfLetters =['a', 'b', 'c']
+    const addScoresOnEachLetter = (arrayOfLetters) => {
+    const scoreObject = {
+        "a" : 1, "b" : 3,"c" : 3,"d" : 2, "e" : 1, "f" : 4,"g" : 2,"h" : 4,"i" : 1,"j" : 8,"k" : 5,"l" : 1,"m" : 3,"n" : 1,"o" : 1,"p" : 3,"q" : 10,"r" : 1,"s" : 1,"t" : 1,"u" : 1,"v" : 4, "w" : 4,"x" : 8,"y" : 4,"z" : 10
+    }
+    let arrayOfScores = [];
+    let index = "a"
+    for (let i = 0; i<arrayOfLetters.length; i++) {
+        let index = arrayOfLetters[i]
+        arrayOfScores.push(scoreObject[index])
+    }
+    return arrayOfScores.reduce((a,b) => a + b, 0)
+    }
+    
   </script>
 ​
   <!-- tests -->
@@ -29,6 +44,15 @@
   </script>
   <script>
     // write your tests here
+    describe('addScoresOnEachLetter', () =>{
+        it('adds the score of all the letters', () =>{
+            const arrayOfLetters = ['a','b','c']
+            expect(addScoresOnEachLetter(arrayOfLetters)).to.equals(7)
+        })
+    })
+
+
+
   </script>
   <script class="mocha-exec">
     mocha.run();
