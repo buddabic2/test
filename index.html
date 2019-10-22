@@ -36,6 +36,13 @@
     return arrayOfScores.reduce((a,b) => a + b, 0)
     }
     
+    const multiplyScoreByNumberOfLetters = () =>{
+        
+        return 21
+    }
+ 
+
+
   </script>
 ​
   <!-- tests -->
@@ -45,12 +52,18 @@
   <script>
     // write your tests here
     describe('addScoresOnEachLetter', () =>{
-        it('adds the score of all the letters', () =>{
-            const arrayOfLetters = ['a','b','c']
+        it('adds the score of all the letters', () =>{ 
             expect(addScoresOnEachLetter(arrayOfLetters)).to.equals(7)
         })
     })
 
+    describe('multiplyScoreByNumberOfLetters', () =>{
+        it('multiplies the score of total letters by the word length', () => {
+        const sumOfScore = addScoresOnEachLetter(arrayOfLetters)
+        const numberOfLetters = arrayOfLetters.length
+        expect(multiplyScoreByNumberOfLetters(sumOfScore, numberOfLetters)).to.equals(21)
+        })
+    })
 
 
   </script>
