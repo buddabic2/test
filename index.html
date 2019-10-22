@@ -37,8 +37,9 @@
     }
     
     const multiplyScoreByNumberOfLetters = () =>{
-        
-        return 21
+        let score = addScoresOnEachLetter(arrayOfLetters)
+        let number = arrayOfLetters.length
+        return score * number
     }
  
 
@@ -60,7 +61,7 @@
     describe('multiplyScoreByNumberOfLetters', () =>{
         it('multiplies the score of total letters by the word length', () => {
         const sumOfScore = addScoresOnEachLetter(arrayOfLetters)
-        const numberOfLetters = arrayOfLetters.length
+        const numberOfLetters = 3
         expect(multiplyScoreByNumberOfLetters(sumOfScore, numberOfLetters)).to.equals(21)
         })
     })
